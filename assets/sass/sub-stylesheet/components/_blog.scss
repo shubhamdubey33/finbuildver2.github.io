@@ -1,0 +1,180 @@
+.blog {
+    &--one {
+        .section__header {
+            @include breakpoint(lg) {
+                max-width: 600px;
+            }
+        }
+        .blog {
+            
+            &__item {
+                @extend %bg-white;
+            }
+            &__content {
+                h5 {
+                    @extend %mb-0;
+                }
+            }
+        }
+        .sidebar {
+            &__search {
+                form {
+                    input {
+                        @extend %bg-body;
+                    }
+                }
+            }
+        }
+    }
+    &__item {
+        @extend %p-15;
+        border: 1px solid #EDF2F6;
+        &:hover {
+            .blog {
+                &__thumb {
+                    a {
+                        img {
+                            @include transform(scale(1.2));
+                        }
+                    }
+                }
+                &__content {
+                    h5 {
+                        a {
+                            @extend %theme-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__thumb {
+        @extend %hidden;
+        a {
+            img {
+                @extend %w-100;
+            }
+        }
+    }
+    &__content {
+        @extend %p-15;
+        h5 {
+            @include breakpoint(xl) {
+                max-width: 96%;
+            }
+            a {
+                @extend %text-2;
+            }
+        }
+    }
+    &__meta {
+        ul {
+            @extend %flex, %justify-between, %mb-15, %pb-10;
+            border-bottom: 1px solid $border-color;
+            li {
+                a {
+                    @extend %d-inline-block, %p-5, %text-capitalize;
+                    &:hover {
+                        @extend %theme-color;
+                    }
+                    i {
+                        @extend %mr-5, %theme-color;
+                    }
+                }
+            }
+        }
+    }
+    &--classic {
+        .blog {
+            &__item {
+                @extend %bg-white, %p-20;
+                &:hover {
+                    .blog {
+                        &__content {
+                            h3 {
+                                a {
+                                    @extend %theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__thumb {
+                @extend %rel;
+                .quote {
+                    margin-bottom: 70px;
+                }
+                .date {
+                    @extend %abs, %bg-theme, %white-color, %text-capitalize;
+                    z-index: 1;
+                    left: 15px;
+                    bottom: 15px;
+                    padding: 5px 15px;
+                }
+            }
+            &__content {
+                padding-block: 30px;
+                h3 {
+                    a {}
+                }
+            }
+            &__meta {
+                ul {
+                    @extend %justify-start, %mb-0;
+                    border-bottom: none;
+                    li {
+                        @extend %mr-20;
+                        a {
+                            &:hover {
+                                @extend %theme-color;
+                            }
+                            i {
+                                @extend %mr-5;
+                            }
+                        }
+                        span {
+                            @extend %ml-10;
+                        }
+                    }
+                }
+            }
+        }
+        .sidebar {
+            &__search {
+                form {
+                    input {
+                        @extend %bg-body;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.quote {
+    @extend %p-30, %flex;
+    background: url(../../assets/images/blog/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    i {
+        @extend %bg-theme, %white-color, %text-center, %mb-15;
+        border-radius: 100%;
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+        @include font-size(40px);
+        @include breakpoint(sm) {
+            margin-bottom: 0;
+        }
+    }
+    h5 {
+        @extend %white-color, %mb-0;
+        line-height: 1.6;
+        @include breakpoint(sm) {
+            width: calc(100% - 90px);
+            padding-left: 30px;
+        }
+    }
+}

@@ -1,0 +1,177 @@
+.service {
+    &__item {
+        @extend %rel, %bg-white;
+        min-height: 330px;
+        perspective: 1000px;
+        @include transition($transition);
+        &:hover {
+            .service {
+                &__back {
+                    visibility: visible;
+                    img {
+                        transform: translateX(0%);
+                    }
+                    .lab-btn {
+                        transform: translateY(-172px);
+                    }
+                }
+            }
+        }
+    }
+    &__icon {
+        @extend %mb-30;
+    }
+    &__content {
+        h5 {
+            @extend %mb-10;
+        }
+        p {
+            @extend %mb-0;
+        }
+    }
+    &__front {
+        padding: 60px 30px;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+        min-height: inherit;
+    }
+    &__back {
+        @extend %abs, %w-100, %h-100, %text-center;
+        top: 0;
+        left: 0;
+        min-height: inherit;
+        visibility: hidden;
+        overflow: hidden;
+        img {
+            transform: translateX(-100%);
+            @include transition(.5s ease);
+            @extend %h-100, %w-100;
+            object-fit: cover;
+        }
+        .lab-btn {
+            @include transition(.5s ease);
+            &:hover {
+                @extend %bg-white, %theme-color;
+            }
+        }
+    }
+    &--two {
+        .section__header {
+            h2 {
+                @extend %white-color;
+            }
+        }
+        .service {
+            &__slider {}
+            &__item {
+                @extend %bg-white;
+                &:hover {
+                    .service {
+                        &__content {
+                            h5 {
+                                a {
+                                    @extend %theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__pagination {
+                span {
+                    width: 24px;
+                    height: 24px;
+                    line-height: 24px;
+                    opacity: 1;
+                    @extend %m-5, %bg-white, %title-color, %text-700;
+                    @include font-size(13px);
+                    &.swiper-pagination-bullet-active {
+                        @extend %bg-theme, %white-color;
+                    }
+                }
+            }
+        }
+    }
+    &--three {
+        .sertab {
+            gap: 15px;
+            border-bottom: none;
+            @extend %mb-30;
+            &__item {
+                width: 140px;
+                padding-block: 20px;
+                border-bottom: 2px solid transparent;
+                @extend %bg-white, %text-center, %pointer;
+                @include transition($transition);
+                @include breakpoint(sm) {
+                    width: 170px;
+                }
+                &.active {
+                    border-color: $theme-color;
+                    .sertab__content p {
+                        @extend %theme-color;
+                    }
+                }
+            }
+            &__thumb {
+                @extend %mb-10;
+            }
+            &__content {
+                p {
+                    @extend %mb-0, %text-700, %title-color;
+                    @include transition($transition);
+                }
+            }
+        }
+        .sertabcontent {
+            @extend %p-30, %bg-white;
+            &__thumb {
+                img {
+                    @extend %w-100;
+                }
+            }
+            &__content {
+                h2 {
+                    @extend %mb-15;
+                }
+                h3 {
+                    @extend %mb-15;
+                }
+                p {
+                    @extend %mb-20;
+                }
+                ul {
+                    li {
+                        padding-block: 7px;
+                        i {
+                            @extend %mr-5;
+                        }
+                    }
+                }
+                .lab-btn {
+                    @extend %mt-30;
+                }
+            }
+        }
+    }
+    &--details {
+        .service {
+            &__maincontent {
+                @extend %p-30, %bg-white;
+                img {
+                    @extend %mb-15, %w-100, %h-100;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                form {
+                    @extend %mt-30;
+                    input, textarea {
+                        @extend %bg-body;
+                    }
+                    .lab-btn {
+                        @extend %border-none;
+                    }
+                }
+            }
+        }
+    }
+}

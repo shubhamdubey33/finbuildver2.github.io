@@ -1,0 +1,182 @@
+.about {
+    &__img {
+        @extend %rel;
+        &--thumb {
+            >img {
+                @extend %w-100;
+            }
+        }
+        &--content {
+            @extend %abs, %w-100, %p-30;
+            bottom: 0;
+            img {
+                @extend %mb-15;
+            }
+            h5 {
+                @extend %white-color, %mb-0;
+                span {
+                    @extend %d-block;
+                }
+            }
+        }
+    }
+    &__content {
+        h5 {
+            @extend %theme-color;
+        }
+        h2, p {
+            @include breakpoint(xl) {
+                max-width: 90%;
+            }
+        }
+        ul {
+            li {
+                padding-block: 10px;
+                h5 {
+                    @extend %title-color;
+                    i {
+                        @extend %theme-color, %mr-5;
+                    }
+                }
+            }
+        }
+        .lab_btn_group {
+            @extend %mt-30;
+        }
+    }
+    &--two {
+        background-position: right;
+        .about {
+            &__thumb {
+                &--two {
+                    .about__img {
+                        @extend %text-left;
+                        @include breakpoint(md) {
+                            text-align: right;
+                        }
+                        .abs__thumb {
+                            bottom: 50%;
+                            @extend %d-none;
+                            @include breakpoint(md) {
+                                display: block;
+                                @include breakpoint(max-lg) {
+                                    left: 120px;
+                                    bottom: 30%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__img {
+                @extend %rel;
+                &--thumb {
+                    @extend %text-right;
+                    img {
+                        width: auto;
+                    }
+                }
+                .abs__thumb {
+                    @extend %abs, %d-none;
+                    bottom: 70%;
+                    left: 0px;
+                    z-index: -1;
+                    @include breakpoint(sm) {
+                        display: block;
+                        @include breakpoint(max-lg) {
+                            bottom: 50%;
+                            left: 50px;
+                        }
+                    }
+                }
+            }
+            &__content {
+                @include breakpoint(xl) {
+                    max-width: 80%;
+                }
+                h2, p {
+                    @include breakpoint(xl) {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &--three {
+        .about {
+            &__thumb {
+                @extend %rel;
+            }
+            &__img {
+                &--content {
+                    @extend %abs, %center, %text-center, %bg-title, %p-15, %flex, %justify-center;
+                    align-items: center;
+                    align-content: center;
+                    width: 180px;
+                    height: 180px;
+                    border: 8px solid $white-color;
+                    @include border-radius(100%);
+                    h2 {
+                        @extend %mb-0, %theme-color;
+                    }
+                    p {
+                        @extend %mb-0, %white-color;   
+                        span {
+                            @extend %d-block;
+                        }
+                    }
+                }
+            }
+            &__content {
+                h2 {
+                    @include breakpoint(xxl) {
+                        max-width: 80%;
+                    }
+                }
+                h6 {
+                    @extend %mb-25, %text-600, %desc-color;
+                    font-family: $font_body;
+                    line-height: 1.6;
+                }
+                .lab-btn {
+                    @extend %mt-20;
+                }
+            }
+        }
+    }
+    &--teampage {
+        .about {
+            &__content {
+                h2 {
+                    @include breakpoint(xxl) {
+                        max-width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.progressbararea {
+    max-width: 100%;
+    li {
+        .title {
+            @extend %flex, %justify-between;
+            p {
+                @extend %text-capitalize, %title-color, %text-700;
+                span {
+                    @extend %theme-color;
+                }
+            }
+        }
+        .progress {
+            height: 5px;
+            @extend %bg-title;
+            .progress-bar {
+                height: 5px;
+                @extend %bg-theme;
+            }
+        }
+    }
+}

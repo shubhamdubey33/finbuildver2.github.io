@@ -1,0 +1,50 @@
+.contact {
+    .section__header {
+        @include breakpoint(xl) {
+            max-width: 800px;
+        }
+    }
+    &--one, &--two {
+        input, textarea {
+            @extend %bg-white;
+        }
+    }
+    &--two {
+        .section__header {
+            h2 {
+                @include breakpoint(xl) {
+                    max-width: 80%;
+                }
+                @include breakpoint(xxl) {
+                    max-width: 70%;
+                }
+            }
+        }
+    }
+    &--three {
+        input, textarea {
+            @extend %bg-border;
+        }
+    }
+    &__item {
+        @extend %text-center, %bg-white;
+        padding: 60px 30px;
+    }
+    &__icon {
+        @extend %mb-30;
+    }
+    &__content {
+        h5 {
+            @extend %mb-20;
+        }
+        p {
+            @extend %mb-0;
+            span {
+                @extend %theme-color;
+            }
+            b {
+                @extend %d-block, %text-400;
+            }
+        }
+    }
+}

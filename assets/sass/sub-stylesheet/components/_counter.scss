@@ -1,0 +1,45 @@
+.counter {
+    &__area {
+        margin-top: -40px;
+    }
+    &__item {
+        @extend %bg-theme, %text-center, %p-30;
+        border: 1px solid rgba($white-color, $alpha: .1);
+    }
+    &__count {
+        h2 {
+            @extend %white-color, %mb-10;
+        }
+    }
+    &__title {
+        h6 {
+            @extend %text-400;
+        }
+    }
+    &--two {
+        .section__header {
+            h2 {
+                @extend %white-color;
+            }
+        }
+        .counter {
+            &__item {
+                background: rgba($white-color, $alpha: .1);
+                padding: 60px 30px;
+            }
+            &__thumb {
+                @extend %mb-25;
+            }
+            &__count {
+                h4 {
+                    @extend %theme-color;
+                }
+            }
+            &__title {
+                h6 {
+                    @extend %white-color;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,249 @@
+.team {
+    &--one {
+        .team {
+            &__item {
+                @extend %p-15, %bg-white;
+                box-shadow: 0px 0px 10px rgba(11, 34, 57, 0.1);
+                @include transition($transition);
+                &:hover {
+                    @extend %bg-theme;
+                    .team {
+                        &__thumb {
+                            ul {
+                                left: 10px;
+                            }
+                        }
+                        &__content {
+                            h5 {
+                                a {
+                                    @extend %white-color;
+                                }
+                            }
+                            span {
+                                @extend %white-color;
+                            }
+                        }
+                    }
+                }
+            }
+            &__thumb {
+                @extend %rel, %hidden, %mb-15;
+                img {
+                    @extend %w-100;
+                }
+                ul {
+                    @extend %abs;
+                    top: 15px;
+                    left: -40px;
+                    @include transition($transition);
+                    li {
+                        a {
+                            width: 30px;
+                            height: 30px;
+                            line-height: 30px;
+                            border-radius: 100%;
+                            font-size: 14px;
+                            @extend %text-center, %bg-white, %theme-color, %text-700, %d-inline-block, %m-5;
+                            &:hover {
+                                @extend %bg-theme, %white-color;
+                            }
+                        }
+                    }
+                }
+            }
+            &__content {
+                @extend %text-center;
+                padding-block: 5px;
+                h5 {
+                    @extend %mb-5;
+                    a {
+                        @include transition($transition);
+                    }
+                }
+                span {
+                    @extend %d-inline-block;
+                    @include transition($transition);
+                }
+            }
+        }
+    }
+    &--two {
+        .team {
+            &__item {
+                @extend %bg-white, %p-30, %flex, %rel;
+                @include breakpoint(sm) {
+                    padding: 40px;
+                }
+                &::after {
+                    width: 140px;
+                    height: 140px;
+                    top: 0;
+                    left: 0;
+                    @extend %abs, %bg-title;
+                    @include transition($transition);
+                }
+                &:hover {
+                    &::after {
+                        @extend %bg-theme;
+                    }
+                    .team {
+                        &__thumb {
+                            &::after {
+                                @extend %bg-theme;
+                            }
+                        }
+                        &__content {
+                            h5 {
+                                a {
+                                    @extend %theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__thumb {
+                @extend %w-100, %rel, %mb-30;
+                z-index: 1;
+                border: 6px solid $white-color;
+                filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.1));
+                @include breakpoint(sm) {
+                    width: 40%;
+                    margin-bottom: 0;
+                }
+                &::after {
+                    @extend %abs, %bg-title;
+                    top: 100%;
+                    left: 100%;
+                    width: 15px;
+                    height: 15px;
+                    @include transition($transition);
+                }
+                img {
+                    object-fit: cover;
+                    @extend %w-100, %h-100;
+                }
+            }
+            &__content {
+                @extend %w-100;
+                @include breakpoint(sm) {
+                    width: 60%;
+                    padding-left: 30px;
+                }
+                h5 {
+                    @extend %mb-5;
+                    a {}
+                }
+                span {
+                    @extend %d-block, %mb-15;
+                }
+                p {
+                    @extend %mb-20;
+                    @include breakpoint(xxl) {
+                        max-width: 90%;
+                    }
+                }
+                ul {
+                    gap: 5px;
+                    @extend %flex;
+                    li {
+                        @extend %d-inline-block;
+                        a {
+                            width: 36px;
+                            height: 36px;
+                            line-height: 36px;
+                            border-radius: 100%;
+                            @extend %text-center, %bg-body, %title-color, %d-inline-block;
+                            @include transition($transition);
+                            &:hover {
+                                @extend %bg-theme, %white-color;
+                                @include transform(translateY(-5px));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &--deatils {
+        .section__wrapper {
+            @extend %bg-white, %p-30;
+        }
+        .team {
+            &__thumb {
+                img {
+                    @extend %w-100;
+                }
+                &--info {
+                    @include breakpoint(lg) {
+                        padding-left: 30px;
+                    }
+                    span {
+                        @extend %text-capitalize;
+                    }
+                    ul {
+                        @extend %mt-20;
+                        li {
+                            @extend %flex;
+                            padding-block: 10px;
+                            .left {
+                                width: 120px;
+                                p {
+                                    @extend %mb-0, %title-color, %text-600, %text-capitalize;
+                                }
+                            }
+                            .right {
+                                width: calc(100% - 120px);
+                                @extend %pl-15, %rel;
+                                &::after {
+                                    @extend %abs;
+                                    content: ":";
+                                    left: 0;
+                                    top: 50%;
+                                    @include transform(translateY(-50%));
+                                }
+                                p {
+                                    @extend %mb-0;
+                                }
+                                ul {
+                                    @extend %mt-0;
+                                    li {
+                                        @extend %d-inline-block, %p-0;
+                                        a {
+                                            width: 32px;
+                                            height: 32px;
+                                            line-height: 32px;
+                                            border-radius: 100%;
+                                            @include font-size(14px);
+                                            @include transition($transition);
+                                            @extend %bg-body, %title-color, %d-inline-block, %text-center;
+                                            &:hover {
+                                                @extend %bg-theme, %white-color;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__content {
+                p {
+                    @extend %mb-30;
+                }
+                .progressbararea {
+                    li {
+                        padding-block: 15px;
+                        .title {
+                            p {
+                                @extend %mb-10;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

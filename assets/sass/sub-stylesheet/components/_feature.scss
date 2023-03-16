@@ -1,0 +1,77 @@
+.feature {
+    &--two {
+        .feature {
+            &__item {
+                padding: 60px 20px;
+                @include breakpoint(xxl) {
+                    padding: 60px 30px;
+                }
+            }
+        }
+    }
+    &--three {
+        .feature {
+            &__item {
+                padding: 60px 30px;
+                &:hover {
+                    @include transform(translateY(-10px));
+                    .feature {
+                        &__content {
+                            h5 {
+                                a {
+                                    @extend %theme-color;
+                                }
+                            }
+                            .text-btn {
+                                @extend %theme-color;
+                            }
+                        }
+                    }
+                }
+            }
+            &__content {
+                .text-btn {
+                    @extend %mt-20;
+                }
+            }
+        }
+    }
+    &__area {
+        margin-top: -100px;
+        z-index: 99;
+        @extend %rel;
+    }
+    &__item {
+        padding: 60px 30px;
+        @extend %bg-white, %rel;
+        @include transition($transition);
+        &::after {
+            @extend %abs, %w-100, %bg-theme;
+            height: 4px;
+            left: 0;
+            bottom: 0;
+            opacity: 0;
+            @include transition(all .3s ease);
+        }
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+            .feature {
+                &__content {
+                    h5 {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+    &__thumb {
+        @extend %mb-30;
+    }
+    &__content {
+        p {
+            @extend %mb-0;
+        }
+    }
+}

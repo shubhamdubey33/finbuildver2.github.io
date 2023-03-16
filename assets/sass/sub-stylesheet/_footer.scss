@@ -1,0 +1,130 @@
+.footer {
+    &--two {
+        .footer {
+            &__top {
+                border-bottom: 1px solid rgba($white-color, $alpha: .05);
+            }
+        }
+    }
+    &__middile {
+        border-bottom: 1px solid rgba($white-color, $alpha: .1);
+        padding-block: 80px;
+    }
+    &__bottom {
+        padding-block: 30px;
+        p {
+            @extend %mb-0, %white-color;
+            a {
+                @extend %white-color;
+                &:hover {
+                    @extend %theme-color;
+                }
+            }
+        }
+    }
+    &__title {
+        h5 {
+            @extend %white-color, %mb-30;
+        }
+    }
+    &__about {
+        p {
+            @extend %white-color;
+            line-height: 32px;
+        }
+        ul {
+            @extend %mt-30;
+            li {
+                @extend %d-inline-block;
+                a {
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    border-radius: 100%;
+                    margin: 2px;
+                    @extend %bg-theme, %white-color, %d-inline-block, %text-center;
+                }
+            }
+        }
+    }
+    &__community {
+        @include breakpoint(sm) {
+            max-width: 60%;
+            margin: 0 auto;
+        }
+        @include breakpoint(lg) {
+            @include breakpoint(max-xl) {
+                max-width: 75%;
+                margin: 0 auto;
+            }
+        }
+        ul {
+            li {
+                a {
+                    @extend %white-color, %d-inline-block;
+                    padding-block: 10px;
+                    i {
+                        @extend %mr-5;
+                    }
+                }
+            }
+        }
+    }
+    &__post {
+        &--thumb {
+            width: 80px;
+            height: 80px;
+            img {
+                @extend %w-100, %h-100;
+                object-fit: cover;
+            }
+        }
+        &--content {
+            width: calc(100% - 80px);
+            @extend %pl-15;
+            h6 {
+                font-size: 16px;
+                a {
+                    @extend %white-color, %text-2;
+                }
+            }
+            span {
+                @extend %white-color, %d-inline-block;
+                i {
+                    @extend %theme-color;
+                }
+            }
+        }
+        ul {
+            li {
+                @extend %flex, %align-items-center;
+                padding-block: 15px;
+                border-bottom: 1px solid rgba($white-color, $alpha: .1);
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+.info {
+    &__item {
+        background-color: rgba($white-color, $alpha: .05);
+        padding: 20px 30px;
+        @extend %flex, %align-items-center;
+    }
+    &__icon {
+        width: 50px;
+    }
+    &__content {
+        width: calc(100% - 50px);
+        @extend %pl-20;
+        p {
+            @extend %mb-5, %white-color;
+        }
+        h6 {
+            @extend %mb-0, %white-color, %text-lowercase;
+        }
+    }
+}
